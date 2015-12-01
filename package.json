@@ -17,12 +17,18 @@
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
     "history": "^1.13.1",
+    "lodash": "^3.10.1",
     "node-notifier": "^4.2.1",
-    "react": "^0.13.1",
+    "react": "^0.14.3",
+    "react-addons-create-fragment": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-responsive-carousel": "^2.0.2",
     "react-router": "^1.0.0",
     "reactify": "^1.1.0",
+    "reflux": "^0.3.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^2.4.0"
+    "watchify": "^2.4.0",
+    "whatwg-fetch": "^0.10.1"
   },
   "devDependencies": {}
 }

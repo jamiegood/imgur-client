@@ -44,6 +44,8 @@ class Users extends React.Component {
     return (
       <div>
         <h2>Users</h2>
+          {this.props.children}
+
       </div>
     )
   }
@@ -63,7 +65,7 @@ class User extends React.Component {
   render() {
     return (
       <div>
-        <h3>User {this.props.params.id}</h3>
+        <h3>User Ryan goes her{this.props.params}</h3>
       </div>
     )
   }
@@ -89,8 +91,7 @@ render((
       <IndexRoute component={Index}/>
       <Route path="/about" component={About}/>
       <Route path="users" component={Users}>
-        <IndexRoute component={UsersIndex}/>
-        <Route path=":id" component={User}/>
+        <Route path="ryan" component={User}/>
       </Route>
     </Route>
   </Router>
