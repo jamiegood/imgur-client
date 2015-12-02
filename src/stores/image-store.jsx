@@ -7,14 +7,18 @@ module.exports = Reflux.createStore({
   //if any of the actions here get called, and if you have a store method called same name, call it
   listenables: [Actions],
 
-  getTopics: function() {
-    return Api.get('topics/defaults')
+  getImages: function(topicId) {
+    return Api.get('topics/' + topicId)
             .then(function(json) {
-              this.topics = json.data;
+              //if bool is true reject from this.images
+              this.images = _.reject(json.data, function(image) {
+                return image.is_album;
+              });
               this.triggerChange();
+              console.log("GETIMAGES");
             }.bind(this));
   },
   triggerChange: function() {
-    this.trigger('change', this.topics);
+    this.trigger('change', this.images);
   }
 });

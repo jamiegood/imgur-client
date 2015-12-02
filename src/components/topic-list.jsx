@@ -2,6 +2,10 @@ var React = require('react');
 var Reflux = require('reflux');
 var TopicStore = require('../stores/topic-store');
 var createFragment = require('react-addons-create-fragment');
+var Actions = require('../actions');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+
 
 module.exports = React.createClass({
 
@@ -15,26 +19,26 @@ module.exports = React.createClass({
     }
   },
   onChange: function(event, topics) {
-    console.log(topics);
-
     this.setState({topics: topics});
   },
   //componentWillMount runs first, but only once.
   //other components that use this, can't access this
   componentWillMount: function() {
-    TopicStore.getTopics();
+    Actions.getTopics();
   },
   render: function(){
     return <div className="list-group">
-      Topic list
       {this.renderTopics()}
     </div>
   },
   renderTopics: function() {
-    var topics = this.state.topics.map(function(topic) {
-      return <li>{createFragment(topic)}</li>
+    return this.state.topics.slice(0, 4).map(function(topic) {
+      return <Link to={"topics/" + topic.id} className="list-group-item" key={topic.id}>
+        <h4>{topic.name}</h4>
+        <p>{topic.description}</p>
+      </Link>
     });
 
-    return <div>{topics}</div>
+    //return <div>{topics}</div>
   }
 });
