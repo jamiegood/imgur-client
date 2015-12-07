@@ -44,7 +44,7 @@ module.exports = React.createClass({
     });
   },
   renderContent: function() {
-    return <div>
+    return <div className="image-detail">
               <div className="panel panel-default">
                   <div className="panel-heading">
                     <h4>{this.state.image.title}</h4>

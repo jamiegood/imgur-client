@@ -6,8 +6,7 @@ module.exports = React.createClass({
   render: function() {
 
     return <div>
-      I am a comment box
-        <ul>
+        <ul className="list-group">
           {this.renderComments()}
         </ul>
       </div>
@@ -15,9 +14,13 @@ module.exports = React.createClass({
 
   renderComments: function() {
 
-    return this.props.comments.map(function(comment) {
-        console.log(comment);
-        return <div key={comment.id}>{JSON.stringify(comment)}</div>
+    return this.props.comments.slice(0, 20).map(function(comment) {
+        return <li className="list-group-item comment-box" key={comment.id}>
+          <span className="badge">{comment.ups}</span>
+          <h5>Comment</h5>
+          {comment.comment}
+
+        </li>
     });
 
   }
