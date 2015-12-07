@@ -25,6 +25,7 @@ module.exports = React.createClass({
   },
   componentWillReceiveProps: function(nextProps) {
     console.log('componentWillReceiveProps');
+
     Actions.getImages(nextProps.params.id);
   },
   render: function() {

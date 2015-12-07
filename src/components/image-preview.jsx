@@ -1,5 +1,5 @@
 var React = require('react');
-
+var Link = require('react-router').Link;
 /* render a preview of image depending on it's type. I.E. static image, gif, video */
 module.exports = React.createClass({
 
@@ -10,10 +10,22 @@ module.exports = React.createClass({
   },
   render: function() {
 
-    return <div className="image-preview"
+    return <Link
+              to={"/images/" + this.props.id}
+              className="image-preview"
               onMouseEnter={this.handleOnMouseEnter}
               onMouseLeave={this.handleOnMouseLeave}>
             {this.props.animated && this.state.hovering ? this.video() : this.image()}
+            {this.props.animated && !this.state.hovering ? this.icon() : null}
+            {this.state.hovering ? this.inset() : null}
+          </Link>
+  },
+  inset: function() {
+    return <div className="inset">
+              Views: {this.props.views}
+              <br />
+              Upvotes: {this.props.ups}
+
           </div>
   },
   image: function() {
@@ -27,6 +39,9 @@ module.exports = React.createClass({
                   <source src={this.props.mp4} type='video/mp4'></source>
               </video>
     </div>
+  },
+  icon: function() {
+    return <span className="glyphicon glyphicon-play"></span>
   },
   handleOnMouseEnter: function(event) {
     console.log('om mouse enter');
