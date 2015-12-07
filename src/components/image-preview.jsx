@@ -1,5 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
+
 /* render a preview of image depending on it's type. I.E. static image, gif, video */
 module.exports = React.createClass({
 
@@ -44,11 +45,9 @@ module.exports = React.createClass({
     return <span className="glyphicon glyphicon-play"></span>
   },
   handleOnMouseEnter: function(event) {
-    console.log('om mouse enter');
     this.setState({hovering: true});
   },
   handleOnMouseLeave: function(event) {
-    console.log('on mouse leave');
     this.setState({hovering: false});
   }
 

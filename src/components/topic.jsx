@@ -25,7 +25,6 @@ module.exports = React.createClass({
   },
   componentWillReceiveProps: function(nextProps) {
     console.log('componentWillReceiveProps');
-
     Actions.getImages(nextProps.params.id);
   },
   render: function() {
@@ -34,7 +33,6 @@ module.exports = React.createClass({
           </div>
   },
   onChange: function(event, images) {
-    console.log('ONCHANGE::');
     this.setState({images: images});
   },
   renderImages: function() {

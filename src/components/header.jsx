@@ -48,7 +48,6 @@ module.exports = React.createClass({
     //return {topics}
   },
   onChange: function(event, topics) {
-    console.log("Onchange: " + topics);
     this.setState({topics: topics})
   }
 })

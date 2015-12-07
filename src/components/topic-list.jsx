@@ -1,5 +1,6 @@
 var React = require('react');
 var Reflux = require('reflux');
+
 var TopicStore = require('../stores/topic-store');
 var createFragment = require('react-addons-create-fragment');
 var Actions = require('../actions');
@@ -27,7 +28,7 @@ module.exports = React.createClass({
     Actions.getTopics();
   },
   render: function(){
-    return <div className="list-group"> 
+    return <div className="list-group">
       {this.renderTopics()}
     </div>
   },
@@ -38,7 +39,5 @@ module.exports = React.createClass({
         <p>{topic.description}</p>
       </Link>
     });
-
-    //return <div>{topics}</div>
   }
 });

@@ -19,7 +19,6 @@ module.exports = React.createClass({
           <span className="badge">{comment.ups}</span>
           <h5>Comment</h5>
           {comment.comment}
-
         </li>
     });
 

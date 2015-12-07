@@ -26,14 +26,7 @@ module.exports = React.createClass({
     Actions.getImage(this.props.params.id);
   },
   render: function() {
-
-    console.log("HOWDY there", this.state.image);
-
-    //var test = this.state.image ? this.state.image : null;
-  //  test = createFragment(test);
     return <div className="image-detail">{this.state.image ? this.renderContent() : null}</div>
-
-    //return <div className="topic">{this.state.image}</div>
   },
   onChange: function() {
     //console.log(event, image);
