@@ -25,7 +25,7 @@ module.exports = React.createClass({
 
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          Imgur Brand
+          Imgur Client
         </Link>
 
         <ul className="nav navbar-nav navbar-right">
