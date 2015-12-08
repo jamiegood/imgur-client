@@ -22,8 +22,9 @@ Upgraded to React 0.14
 
 ## Install
 
-    git clone
-    npm install
+    git clone https://github.com/jamiegood/imgur-client.git
+    cd imgur-client
+    npm install (maybe sudo required)
     gulp
 
 gulp will open a browser window running the website
