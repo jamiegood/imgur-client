@@ -27,7 +27,7 @@ Upgraded to React 0.14
     npm install (maybe sudo required)
     gulp
 
-gulp will open a browser window running the website
+gulp will open a browser window running the website with Live Reload.
 
 ## Prerequisites
 
