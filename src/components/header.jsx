@@ -45,7 +45,6 @@ module.exports = React.createClass({
           </Link>
         </li>
     });
-    //return {topics}
   },
   onChange: function(event, topics) {
     this.setState({topics: topics})

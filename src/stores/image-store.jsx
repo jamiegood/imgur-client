@@ -16,19 +16,15 @@ module.exports = Reflux.createStore({
               });
 
               this.triggerChange();
-              console.log("GETIMAGES");
             }.bind(this));
   },
   find: function(id) {
     //goes through array of images and find one where id = id
     var image = _.findWhere(this.images, {id:id});
 
-    console.log("FIND IAMGE FROM IMGSTORE: ", image);
     if(image) {
       return image;
     } else {
-
-      console.log('FIND HERE: ');
       this.getImage(id);
       return null;
     }
@@ -41,7 +37,6 @@ module.exports = Reflux.createStore({
               } else {
                 this.images = [json.data];
               }
-              console.log("AM IN GETIMAGE");
               this.triggerChange();
             }.bind(this));
   },
