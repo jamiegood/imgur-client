@@ -18,6 +18,7 @@ Upgraded to React 0.14
 * Gulp for JSX converting to JS, build steps and live reload (run gulp)
 * Browserify to require in react components(files) and bundling/combining files
 * Basic responsive design via bootstrap
+* SCSS for CSS 
 
 ## Install
 
