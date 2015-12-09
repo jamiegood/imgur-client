@@ -22,6 +22,8 @@ Upgraded to React 0.14
 
 ## Install
 
+First install the grunt-cli tool
+    sudo npm install -g grunt-cli
     git clone https://github.com/jamiegood/imgur-client.git
     cd imgur-client
     npm install (maybe sudo required)
@@ -31,7 +33,7 @@ gulp will open a browser window running the website with Live Reload.
 
 ## Prerequisites
 
-You have node installed at v0.10.0+ (it might work at lower versions, we just haven't tested) and npm at v2.0.0+.
+You have node installed at v4.2.1+ (it might work at lower versions, we just haven't tested) and npm at v2.0.0+.
 
 ## Todo
 
