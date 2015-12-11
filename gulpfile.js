@@ -3,12 +3,14 @@ var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var reactify = require('reactify');
+//var reactify = require('reactify');
+var babelify = require('babelify');
 var notifier = require('node-notifier');
 var server = require('gulp-server-livereload');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var jest = require('gulp-jest');
 
 var notify = function(error) {
   var message = 'In: ';
@@ -33,14 +35,15 @@ var notify = function(error) {
 };
 
 var bundler = watchify(browserify({
-  entries: ['./src/app.jsx'],
-  transform: [reactify],
-  extensions: ['.jsx'],
+  entries: ['./src/app.js'],
+  extensions: ['.jsx', '.js'],
   debug: true,
   cache: {},
   packageCache: {},
   fullPaths: true
-}));
+}).transform(babelify.configure({
+  presets: ["es2015", "react"]
+})));
 
 function bundle() {
   return bundler
@@ -69,6 +72,21 @@ gulp.task('serve', function(done) {
         }
       },
       open: true
+    }));
+});
+
+//var jest = require('gulp-jest');
+
+gulp.task('jest', function () {
+    return gulp.src('__tests__').pipe(jest({
+        scriptPreprocessor: "./node_modules/babel-jest",
+        unmockedModulePathPatterns: [
+          "./node_modules/react",
+          "./node_modules/react-dom",
+          "./node_modules/reflux",
+          "./node_modules/react-addons-test-utils",
+          "./node_modules/fbjs"
+        ]
     }));
 });
 

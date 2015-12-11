@@ -1,7 +1,9 @@
 var React = require('react');
 var Link = require('react-router').Link;
 
-/* render a preview of image depending on it's type. I.E. static image, gif, video */
+// /* render a preview of image depending on it's type. I.E. static image, gif, video */
+
+
 module.exports = React.createClass({
 
   getInitialState: function() {
