@@ -20,6 +20,10 @@ Upgraded to React 0.14
 * Basic responsive design via bootstrap
 * SCSS for CSS, gulp converts SCSS to combined CSS file
 
+## Prerequisites
+
+You have node installed at v4.2.1+ (it might work at lower versions, we just haven't tested) and npm at v2.0.0+.
+
 ## Install
 
 First install the gulp-cli tool
@@ -36,9 +40,12 @@ First install the gulp-cli tool
 
 gulp will open a browser window running the website with Live Reload.
 
-## Prerequisites
+## Run tests
 
-You have node installed at v4.2.1+ (it might work at lower versions, we just haven't tested) and npm at v2.0.0+.
+
+    npm test
+
+
 
 ## Todo
 
