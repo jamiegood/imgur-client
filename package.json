@@ -37,7 +37,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-runtime": "^6.2.0",
     "babelify": "^7.2.0",
-    "jest-cli": "^0.5.10",
+    "jest-cli": "^0.8.1",
     "react-addons-test-utils": "^0.14.0"
   },
   "jest": {
