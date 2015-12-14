@@ -6,6 +6,7 @@ var CommentStore = require('../stores/comment-store');
 var Actions = require('../actions');
 var createFragment = require('react-addons-create-fragment')
 var CommentBox = require('./comment-box');
+//var About = require('./about');
 
 module.exports = React.createClass({
 
@@ -47,12 +48,20 @@ module.exports = React.createClass({
                   </div>
                   <div className="panel-footer">
                     {this.state.image.description}
+                    <button className="default" onClick={this.handleSave}>Save</button>
                   </div>
 
               </div>
               <h3>Comments</h3>
+
               {this.renderComments()}
              </div>
+  },
+
+  handleSave: function() {
+    console.log('clicked save');
+    Actions.saveImage();
+
   },
   renderImage: function() {
      if(this.state.image.animated) {

@@ -2,7 +2,9 @@ var React = require('react');
 var Reflux = require('reflux');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
+
 var createFragment = require('react-addons-create-fragment');
+
 var Actions = require('../actions');
 var TopicStore = require('../stores/topic-store');
 

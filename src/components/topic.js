@@ -4,8 +4,8 @@ var ImageStore = require('../stores/image-store');
 var ImagePreview = require('../components/image-preview');
 
 var Actions = require('../actions');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
+// var ReactRouter = require('react-router');
+// var Link = ReactRouter.Link;
 
 
 

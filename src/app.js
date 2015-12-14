@@ -5,4 +5,8 @@ var ReactDOM = require('react-dom');
 var Routes = require('./routes');
 
 /* create React app, load ing Routes component and attach to .container class */
+
+
+//ReactDOM.render(buttonsInstance, document.querySelector('.container'));
+
 ReactDOM.render(Routes, document.querySelector('.container'));
